@@ -13,6 +13,7 @@
 		6EE1F8F11C1B83FA00238520 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE1F8F01C1B83FA00238520 /* main.swift */; };
 		6EE1F90A1C1B87BF00238520 /* FootlessParser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE1F9061C1B875900238520 /* FootlessParser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6EE1F90D1C1B886100238520 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE1F90C1C1B886100238520 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6EEA27E91C1DCC38007A3415 /* HttpBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA27E81C1DCC38007A3415 /* HttpBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		6EE1F8F01C1B83FA00238520 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6EE1F9061C1B875900238520 /* FootlessParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FootlessParser.framework; path = Carthage/Build/Mac/FootlessParser.framework; sourceTree = "<group>"; };
 		6EE1F90C1C1B886100238520 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
+		6EEA27E81C1DCC38007A3415 /* HttpBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				6EA0EA391C1D82610028D7A3 /* base.swift */,
 				6EA0EA3B1C1D83630028D7A3 /* decode.swift */,
 				6EA0EA3D1C1D86160028D7A3 /* encode.swift */,
+				6EEA27E81C1DCC38007A3415 /* HttpBase.swift */,
 			);
 			path = "tictactoe-swift";
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			files = (
 				6EA0EA3A1C1D82610028D7A3 /* base.swift in Sources */,
 				6EA0EA3E1C1D86160028D7A3 /* encode.swift in Sources */,
+				6EEA27E91C1DCC38007A3415 /* HttpBase.swift in Sources */,
 				6EE1F8F11C1B83FA00238520 /* main.swift in Sources */,
 				6EA0EA3C1C1D83630028D7A3 /* decode.swift in Sources */,
 			);
