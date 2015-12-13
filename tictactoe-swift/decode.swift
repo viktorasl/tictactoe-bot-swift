@@ -31,9 +31,17 @@ private let parseBencodeListBoard = char("l") *> zeroOrMore(parseFieldDict) <* c
 private let parseBencodeDictBoard = char("d") *> zeroOrMore(parseDictFields) <* char("e")
 
 public func parseBencodeList(msg: String) -> Board? {
-    return try? parse(parseBencodeListBoard, msg)
+    if let fields = try? parse(parseBencodeListBoard, msg) {
+        return Board(fields: fields)
+    } else {
+        return nil
+    }
 }
 
 func parseBencodeDict(msg: String) -> Board? {
-    return try? parse(parseBencodeDictBoard, msg)
+    if let fields = try? parse(parseBencodeDictBoard, msg) {
+        return Board(fields: fields)
+    } else {
+        return nil
+    }
 }

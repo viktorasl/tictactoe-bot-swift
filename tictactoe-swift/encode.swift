@@ -18,9 +18,9 @@ private func encodeFieldDict(idx: Int, field: BoardField) -> String {
 }
 
 func encodeBencodeList(board: Board) -> String {
-    return "l" + board.map{ encodeField($0) }.joinWithSeparator("") + "e"
+    return "l" + board.fields.map{ encodeField($0) }.joinWithSeparator("") + "e"
 }
 
 func encodeBencodeDict(board: Board) -> String {
-    return "d" + board.enumerate().map{ encodeFieldDict($0, field: $1) }.joinWithSeparator("") + "e"
+    return "d" + board.fields.enumerate().map{ encodeFieldDict($0, field: $1) }.joinWithSeparator("") + "e"
 }

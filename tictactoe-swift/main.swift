@@ -20,9 +20,9 @@ guard let player = Player(key: args[0]) else {
 }
 let gameName = args[1]
 
-func playAttacker(req: TictactoeReq, board: Board, moves: Board) {
+func playAttacker(req: TictactoeReq, board: Board, moves: [BoardField]) {
     if let move = moves.first {
-        let newBoard = board + [move]
+        let newBoard = Board(fields: board.fields + [move])
         makeMove(req, boardStr: encodeBencodeList(newBoard))
     }
     let leftMoves = Array(moves[1..<(moves.count)])
@@ -35,13 +35,13 @@ func playAttacker(req: TictactoeReq, board: Board, moves: Board) {
     }
 }
 
-func playDefender(req: TictactoeReq, board: Board, moves: Board) {
+func playDefender(req: TictactoeReq, board: Board, moves: [BoardField]) {
     guard let getResp = getMove(req), gotBoard = parseBencodeDict(getResp) else {
         print("Error occured getting board")
         return
     }
     if let move = moves.first {
-        let newBoard = gotBoard + [move]
+        let newBoard = Board(fields: gotBoard.fields + [move])
         makeMove(req, boardStr: encodeBencodeDict(newBoard))
         let leftMoves = Array(moves[1..<(moves.count)])
         playDefender(req, board: newBoard, moves: leftMoves)
@@ -58,7 +58,7 @@ case .X:
         BoardField(x: 2, y: 1, player: .X)
     ]
     let attReq = TictactoeReq(player: player, gameName: gameName, contentType: .BencodeList)
-    playAttacker(attReq, board: [], moves: attMoves)
+    playAttacker(attReq, board: Board(fields: []), moves: attMoves)
 case .O:
     let defMoves = [
         BoardField(x: 0, y: 0, player: .O),
@@ -67,5 +67,5 @@ case .O:
         BoardField(x: 0, y: 1, player: .O)
     ]
     let defReq = TictactoeReq(player: .O, gameName: gameName, contentType: .BencodeDict)
-    playDefender(defReq, board: [], moves: defMoves)
+    playDefender(defReq, board: Board(fields: []), moves: defMoves)
 }

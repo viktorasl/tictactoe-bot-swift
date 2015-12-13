@@ -34,4 +34,6 @@ public struct BoardField {
     let player: Player
 }
 
-public typealias Board = [BoardField]
+public struct Board {
+    let fields: [BoardField]
+}
