@@ -37,7 +37,7 @@
 		6EA0EA391C1D82610028D7A3 /* base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = base.swift; sourceTree = "<group>"; };
 		6EA0EA3B1C1D83630028D7A3 /* decode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = decode.swift; sourceTree = "<group>"; };
 		6EA0EA3D1C1D86160028D7A3 /* encode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = encode.swift; sourceTree = "<group>"; };
-		6EE1F8E01C1B83D900238520 /* tictactoe-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tictactoe-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EE1F8E01C1B83D900238520 /* Tictactoe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tictactoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EE1F8EA1C1B83D900238520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EE1F8F01C1B83FA00238520 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6EE1F9061C1B875900238520 /* FootlessParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FootlessParser.framework; path = Carthage/Build/Mac/FootlessParser.framework; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 				6EEA27EA1C1DDEFF007A3415 /* SwiftCheck.framework */,
 				6EE1F90C1C1B886100238520 /* Result.framework */,
 				6EE1F9061C1B875900238520 /* FootlessParser.framework */,
-				6EE1F8E21C1B83D900238520 /* tictactoe-swift */,
+				6EE1F8E21C1B83D900238520 /* Tictactoe */,
 				6EE1F8E11C1B83D900238520 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,12 +71,12 @@
 		6EE1F8E11C1B83D900238520 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6EE1F8E01C1B83D900238520 /* tictactoe-swift.app */,
+				6EE1F8E01C1B83D900238520 /* Tictactoe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6EE1F8E21C1B83D900238520 /* tictactoe-swift */ = {
+		6EE1F8E21C1B83D900238520 /* Tictactoe */ = {
 			isa = PBXGroup;
 			children = (
 				6EE1F8EA1C1B83D900238520 /* Info.plist */,
@@ -86,15 +86,16 @@
 				6EA0EA3D1C1D86160028D7A3 /* encode.swift */,
 				6EEA27E81C1DCC38007A3415 /* HttpBase.swift */,
 			);
+			name = Tictactoe;
 			path = "tictactoe-swift";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6EE1F8DF1C1B83D900238520 /* tictactoe-swift */ = {
+		6EE1F8DF1C1B83D900238520 /* Tictactoe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6EE1F8ED1C1B83D900238520 /* Build configuration list for PBXNativeTarget "tictactoe-swift" */;
+			buildConfigurationList = 6EE1F8ED1C1B83D900238520 /* Build configuration list for PBXNativeTarget "Tictactoe" */;
 			buildPhases = (
 				6EE1F8DC1C1B83D900238520 /* Sources */,
 				6EE1F8DD1C1B83D900238520 /* Frameworks */,
@@ -105,9 +106,9 @@
 			);
 			dependencies = (
 			);
-			name = "tictactoe-swift";
+			name = Tictactoe;
 			productName = "tictactoe-swift";
-			productReference = 6EE1F8E01C1B83D900238520 /* tictactoe-swift.app */;
+			productReference = 6EE1F8E01C1B83D900238520 /* Tictactoe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -124,7 +125,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6EE1F8DB1C1B83D900238520 /* Build configuration list for PBXProject "tictactoe-swift" */;
+			buildConfigurationList = 6EE1F8DB1C1B83D900238520 /* Build configuration list for PBXProject "Tictactoe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -137,7 +138,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6EE1F8DF1C1B83D900238520 /* tictactoe-swift */,
+				6EE1F8DF1C1B83D900238520 /* Tictactoe */,
 			);
 		};
 /* End PBXProject section */
@@ -286,7 +287,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6EE1F8DB1C1B83D900238520 /* Build configuration list for PBXProject "tictactoe-swift" */ = {
+		6EE1F8DB1C1B83D900238520 /* Build configuration list for PBXProject "Tictactoe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6EE1F8EB1C1B83D900238520 /* Debug */,
@@ -295,7 +296,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6EE1F8ED1C1B83D900238520 /* Build configuration list for PBXNativeTarget "tictactoe-swift" */ = {
+		6EE1F8ED1C1B83D900238520 /* Build configuration list for PBXNativeTarget "Tictactoe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6EE1F8EE1C1B83D900238520 /* Debug */,
