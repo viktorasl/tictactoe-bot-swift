@@ -23,11 +23,17 @@ private let parsePlayer = tokens("1:v1:") *> (parsePlayerO <|> parsePlayerX)
 
 // Fields parsing
 private let parseField = fieldify <^> parsePlayer <*> parseX <* char("e") <*> parseY <* char("e")
-private let parseFields = char("d") *> parseField <* char("e")
+private let parseFieldDict = char("d") *> parseField <* char("e")
+private let parseDictFields = char("1") *> char(":") *> oneOf("0123456789") *> parseFieldDict
 
 // Boards parsing
-private let parseBencodeListBoard = char("l") *> zeroOrMore(parseFields) <* char("e")
+private let parseBencodeListBoard = char("l") *> zeroOrMore(parseFieldDict) <* char("e")
+private let parseBencodeDictBoard = char("d") *> zeroOrMore(parseDictFields) <* char("e")
 
 func parseBencodeList(msg: String) -> Board? {
     return try? parse(parseBencodeListBoard, msg)
+}
+
+func parseBencodeDict(msg: String) -> Board? {
+    return try? parse(parseBencodeDictBoard, msg)
 }
