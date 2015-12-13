@@ -12,6 +12,14 @@ enum Player: String {
     case X = "x"
     case O = "o"
     
+    init?(key: String) {
+        switch key {
+            case "x": self = .X
+            case "o": self = .O
+            default: return nil
+        }
+    }
+    
     var urlKey: Int {
         switch self {
         case .X: return 1

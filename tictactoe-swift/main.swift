@@ -8,14 +8,64 @@
 
 import Foundation
 
-if let parsed = parseBencodeDict("d1:0d1:v1:x1:xi0e1:yi0ee1:1d1:v1:o1:xi2e1:yi0ee1:2d1:v1:x1:xi0e1:yi1ee1:3d1:v1:o1:xi2e1:yi2ee1:4d1:v1:x1:xi0e1:yi2eee") {
-    print(encodeBencodeDict(parsed))
-} else {
-    print("error occured parsing board")
+let args = Array(Process.arguments[1..<Process.arguments.count])
+
+if args.count < 2 {
+    print("Unknown parameters")
+    exit(0)
+}
+guard let player = Player(key: args[0]) else {
+    print("Unknown player")
+    exit(0)
+}
+let gameName = args[1]
+
+func playAttacker(req: TictactoeReq, board: Board, moves: Board) {
+    if let move = moves.first {
+        let newBoard = board + [move]
+        makeMove(req, boardStr: encodeBencodeList(newBoard))
+    }
+    let leftMoves = Array(moves[1..<(moves.count)])
+    if leftMoves.count > 0 {
+        guard let getResp = getMove(req), gotBoard = parseBencodeList(getResp) else {
+            print("Error occured getting board")
+            return
+        }
+        playAttacker(req, board: gotBoard, moves: leftMoves)
+    }
 }
 
-let attReq = TictactoeReq(player: .X, gameName: "sw-3", contentType: .BencodeList)
-makeMove(attReq, boardStr: encodeBencodeList([BoardField(x: 1, y: 1, player: .X)]))
+func playDefender(req: TictactoeReq, board: Board, moves: Board) {
+    guard let getResp = getMove(req), gotBoard = parseBencodeDict(getResp) else {
+        print("Error occured getting board")
+        return
+    }
+    if let move = moves.first {
+        let newBoard = gotBoard + [move]
+        makeMove(req, boardStr: encodeBencodeDict(newBoard))
+        let leftMoves = Array(moves[1..<(moves.count)])
+        playDefender(req, board: newBoard, moves: leftMoves)
+    }
+}
 
-let defReq = TictactoeReq(player: .O, gameName: "sw-3", contentType: .BencodeDict)
-print(getMove(defReq))
+switch player {
+case .X:
+    let attMoves = [
+        BoardField(x: 1, y: 1, player: .X),
+        BoardField(x: 0, y: 2, player: .X),
+        BoardField(x: 2, y: 2, player: .X),
+        BoardField(x: 1, y: 0, player: .X),
+        BoardField(x: 2, y: 1, player: .X)
+    ]
+    let attReq = TictactoeReq(player: player, gameName: gameName, contentType: .BencodeList)
+    playAttacker(attReq, board: [], moves: attMoves)
+case .O:
+    let defMoves = [
+        BoardField(x: 0, y: 0, player: .O),
+        BoardField(x: 2, y: 0, player: .O),
+        BoardField(x: 1, y: 2, player: .O),
+        BoardField(x: 0, y: 1, player: .O)
+    ]
+    let defReq = TictactoeReq(player: .O, gameName: gameName, contentType: .BencodeDict)
+    playDefender(defReq, board: [], moves: defMoves)
+}
