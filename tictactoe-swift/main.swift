@@ -7,5 +7,3 @@
 //
 
 import Foundation
-
-print("hello swift tictactoe bot")
