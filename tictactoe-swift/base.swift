@@ -29,8 +29,8 @@ public enum Player: String {
 }
 
 public struct BoardField {
-    let x: Int
-    let y: Int
+    let x: UInt
+    let y: UInt
     let player: Player
 }
 

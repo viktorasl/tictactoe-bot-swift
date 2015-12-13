@@ -8,13 +8,13 @@
 
 import FootlessParser
 
-private func fieldify(player: Player)(x: Int)(y: Int) -> BoardField {
+private func fieldify(player: Player)(x: UInt)(y: UInt) -> BoardField {
     return BoardField(x: x, y: y, player: player)
 }
 
 // Coordinates parsing
-private let parseX = {Int("\($0)")!} <^> (tokens("1:xi") *> oneOf("012"))
-private let parseY = {Int("\($0)")!} <^> (tokens("1:yi") *> oneOf("012"))
+private let parseX = {UInt("\($0)")!} <^> (tokens("1:xi") *> oneOf("012"))
+private let parseY = {UInt("\($0)")!} <^> (tokens("1:yi") *> oneOf("012"))
 
 // Players parsing
 private let parsePlayerX = {_ in Player.X} <^> oneOf("xX")

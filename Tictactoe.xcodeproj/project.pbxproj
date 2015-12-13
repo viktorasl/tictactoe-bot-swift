@@ -17,6 +17,7 @@
 		6EEA27EC1C1DDEFF007A3415 /* SwiftCheck.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EEA27EA1C1DDEFF007A3415 /* SwiftCheck.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6EEA28211C1DE318007A3415 /* TictactoeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA28201C1DE318007A3415 /* TictactoeTests.swift */; };
 		6EEA282C1C1DE8D1007A3415 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EEA28181C1DE1EF007A3415 /* SwiftCheck.framework */; };
+		6EEA283A1C1E0C76007A3415 /* base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA0EA391C1D82610028D7A3 /* base.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EEA283A1C1E0C76007A3415 /* base.swift in Sources */,
 				6EEA28211C1DE318007A3415 /* TictactoeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +426,7 @@
 				6EEA28271C1DE318007A3415 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
