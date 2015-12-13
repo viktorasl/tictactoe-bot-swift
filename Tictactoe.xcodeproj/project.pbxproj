@@ -15,7 +15,19 @@
 		6EE1F90D1C1B886100238520 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE1F90C1C1B886100238520 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6EEA27E91C1DCC38007A3415 /* HttpBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA27E81C1DCC38007A3415 /* HttpBase.swift */; };
 		6EEA27EC1C1DDEFF007A3415 /* SwiftCheck.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EEA27EA1C1DDEFF007A3415 /* SwiftCheck.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6EEA28211C1DE318007A3415 /* TictactoeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA28201C1DE318007A3415 /* TictactoeTests.swift */; };
+		6EEA282C1C1DE8D1007A3415 /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EEA28181C1DE1EF007A3415 /* SwiftCheck.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6EEA28231C1DE318007A3415 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EE1F8D81C1B83D900238520 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EE1F8DF1C1B83D900238520;
+			remoteInfo = Tictactoe;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		6EE1F90B1C1B87BF00238520 /* Embed Frameworks */ = {
@@ -43,7 +55,11 @@
 		6EE1F9061C1B875900238520 /* FootlessParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FootlessParser.framework; path = Carthage/Build/Mac/FootlessParser.framework; sourceTree = "<group>"; };
 		6EE1F90C1C1B886100238520 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		6EEA27E81C1DCC38007A3415 /* HttpBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpBase.swift; sourceTree = "<group>"; };
-		6EEA27EA1C1DDEFF007A3415 /* SwiftCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCheck.framework; path = Carthage/Build/Mac/SwiftCheck.framework; sourceTree = "<group>"; };
+		6EEA27EA1C1DDEFF007A3415 /* SwiftCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCheck.framework; path = "/Users/laukeviciusv/Dropbox/university/functional-programming/tictactoe-bot-swift/Carthage/Build/Mac/SwiftCheck.framework"; sourceTree = "<absolute>"; };
+		6EEA28181C1DE1EF007A3415 /* SwiftCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCheck.framework; path = Carthage/Build/Mac/SwiftCheck.framework; sourceTree = "<group>"; };
+		6EEA281E1C1DE318007A3415 /* TictactoeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TictactoeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EEA28201C1DE318007A3415 /* TictactoeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TictactoeTests.swift; sourceTree = "<group>"; };
+		6EEA28221C1DE318007A3415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,16 +70,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6EEA281B1C1DE318007A3415 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EEA282C1C1DE8D1007A3415 /* SwiftCheck.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		6EE1F8D71C1B83D900238520 = {
 			isa = PBXGroup;
 			children = (
-				6EEA27EA1C1DDEFF007A3415 /* SwiftCheck.framework */,
+				6EEA28181C1DE1EF007A3415 /* SwiftCheck.framework */,
 				6EE1F90C1C1B886100238520 /* Result.framework */,
 				6EE1F9061C1B875900238520 /* FootlessParser.framework */,
 				6EE1F8E21C1B83D900238520 /* Tictactoe */,
+				6EEA281F1C1DE318007A3415 /* TictactoeTests */,
 				6EE1F8E11C1B83D900238520 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				6EE1F8E01C1B83D900238520 /* Tictactoe.app */,
+				6EEA281E1C1DE318007A3415 /* TictactoeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +114,15 @@
 			);
 			name = Tictactoe;
 			path = "tictactoe-swift";
+			sourceTree = "<group>";
+		};
+		6EEA281F1C1DE318007A3415 /* TictactoeTests */ = {
+			isa = PBXGroup;
+			children = (
+				6EEA28201C1DE318007A3415 /* TictactoeTests.swift */,
+				6EEA28221C1DE318007A3415 /* Info.plist */,
+			);
+			path = TictactoeTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,6 +146,24 @@
 			productReference = 6EE1F8E01C1B83D900238520 /* Tictactoe.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6EEA281D1C1DE318007A3415 /* TictactoeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EEA28251C1DE318007A3415 /* Build configuration list for PBXNativeTarget "TictactoeTests" */;
+			buildPhases = (
+				6EEA281A1C1DE318007A3415 /* Sources */,
+				6EEA281B1C1DE318007A3415 /* Frameworks */,
+				6EEA281C1C1DE318007A3415 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6EEA28241C1DE318007A3415 /* PBXTargetDependency */,
+			);
+			name = TictactoeTests;
+			productName = TictactoeTests;
+			productReference = 6EEA281E1C1DE318007A3415 /* TictactoeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -121,6 +174,9 @@
 				LastUpgradeCheck = 0710;
 				TargetAttributes = {
 					6EE1F8DF1C1B83D900238520 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					6EEA281D1C1DE318007A3415 = {
 						CreatedOnToolsVersion = 7.1;
 					};
 				};
@@ -139,12 +195,20 @@
 			projectRoot = "";
 			targets = (
 				6EE1F8DF1C1B83D900238520 /* Tictactoe */,
+				6EEA281D1C1DE318007A3415 /* TictactoeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6EE1F8DE1C1B83D900238520 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EEA281C1C1DE318007A3415 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -166,7 +230,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6EEA281A1C1DE318007A3415 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EEA28211C1DE318007A3415 /* TictactoeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6EEA28241C1DE318007A3415 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6EE1F8DF1C1B83D900238520 /* Tictactoe */;
+			targetProxy = 6EEA28231C1DE318007A3415 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6EE1F8EB1C1B83D900238520 /* Debug */ = {
@@ -284,6 +364,38 @@
 			};
 			name = Release;
 		};
+		6EEA28261C1DE318007A3415 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libstdc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = TictactoeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(SRCROOT)/Carthage/Build/Mac";
+				PRODUCT_BUNDLE_IDENTIFIER = vila.TictactoeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6EEA28271C1DE318007A3415 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libstdc++";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = TictactoeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(SRCROOT)/Carthage/Build/Mac";
+				PRODUCT_BUNDLE_IDENTIFIER = vila.TictactoeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -304,6 +416,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		6EEA28251C1DE318007A3415 /* Build configuration list for PBXNativeTarget "TictactoeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EEA28261C1DE318007A3415 /* Debug */,
+				6EEA28271C1DE318007A3415 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

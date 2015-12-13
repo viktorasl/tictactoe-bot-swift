@@ -30,7 +30,7 @@ private let parseDictFields = char("1") *> char(":") *> oneOf("0123456789") *> p
 private let parseBencodeListBoard = char("l") *> zeroOrMore(parseFieldDict) <* char("e")
 private let parseBencodeDictBoard = char("d") *> zeroOrMore(parseDictFields) <* char("e")
 
-func parseBencodeList(msg: String) -> Board? {
+public func parseBencodeList(msg: String) -> Board? {
     return try? parse(parseBencodeListBoard, msg)
 }
 

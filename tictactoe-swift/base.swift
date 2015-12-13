@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Player: String {
+public enum Player: String {
     case X = "x"
     case O = "o"
     
@@ -28,10 +28,10 @@ enum Player: String {
     }
 }
 
-struct BoardField {
+public struct BoardField {
     let x: Int
     let y: Int
     let player: Player
 }
 
-typealias Board = [BoardField]
+public typealias Board = [BoardField]
