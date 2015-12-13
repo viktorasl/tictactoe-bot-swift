@@ -9,21 +9,32 @@
 import XCTest
 import SwiftCheck
 
-extension Board : Arbitrary {
+extension Player: Arbitrary {
+    
+    public static var arbitrary: Gen<Player> {
+        return Gen.oneOf([Gen.pure(Player.X), Gen.pure(Player.O)])
+    }
+}
+
+extension Board: Arbitrary {
     public static func create(x : Int) -> Board {
         return Board(fields: [])
     }
-    public static var arbitrary : Gen<Board> {
+    public static var arbitrary: Gen<Board> {
         return Board.create <^> Int.arbitrary
     }
 }
 
 extension BoardField : Arbitrary {
-    public static func create(x : UInt) -> UInt -> BoardField {
-        return { y in BoardField(x: x % 3, y: y % 3, player: .X) }
+    public static func create(x : UInt) -> UInt -> Player -> BoardField {
+        return { y in
+            { player in
+                BoardField(x: x % 3, y: y % 3, player: player)
+            }
+        }
     }
-    public static var arbitrary : Gen<BoardField> {
-        return BoardField.create <^> UInt.arbitrary <*> UInt.arbitrary
+    public static var arbitrary: Gen<BoardField> {
+        return BoardField.create <^> UInt.arbitrary <*> UInt.arbitrary <*> Player.arbitrary
     }
 }
 
