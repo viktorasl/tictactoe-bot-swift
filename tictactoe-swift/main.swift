@@ -6,8 +6,8 @@
 //
 //
 
-if let parsed = parseBencodeDict("d1:0d1:v1:x1:xi0e1:yi0ee1:1d1:v1:o1:xi2e1:yi0ee1:2d1:v1:x1:xi0e1:yi1ee1:3d1:v1:o1:xi2e1:yi2ee1:4d1:v1:x1:xi0e1:yi2eee") {
-    print(parsed)
+if let parsed = parseBencodeList("ld1:v1:x1:xi0e1:yi0eed1:v1:o1:xi2e1:yi0eed1:v1:x1:xi0e1:yi1eed1:v1:o1:xi1e1:yi1eed1:v1:x1:xi0e1:yi2eee") {
+    print(encodeBencodeList(parsed))
 } else {
     print("error occured parsing board")
 }

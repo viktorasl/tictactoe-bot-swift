@@ -6,9 +6,9 @@
 //
 //
 
-enum Player {
-    case X
-    case O
+enum Player: String {
+    case X = "x"
+    case O = "o"
     
     init?(char: Character) {
         self = .X
