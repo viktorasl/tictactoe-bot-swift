@@ -14,6 +14,7 @@
 		6EE1F90A1C1B87BF00238520 /* FootlessParser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE1F9061C1B875900238520 /* FootlessParser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6EE1F90D1C1B886100238520 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE1F90C1C1B886100238520 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6EEA27E91C1DCC38007A3415 /* HttpBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA27E81C1DCC38007A3415 /* HttpBase.swift */; };
+		6EEA27EC1C1DDEFF007A3415 /* SwiftCheck.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EEA27EA1C1DDEFF007A3415 /* SwiftCheck.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,6 +25,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				6EE1F90A1C1B87BF00238520 /* FootlessParser.framework in Embed Frameworks */,
+				6EEA27EC1C1DDEFF007A3415 /* SwiftCheck.framework in Embed Frameworks */,
 				6EE1F90D1C1B886100238520 /* Result.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -41,6 +43,7 @@
 		6EE1F9061C1B875900238520 /* FootlessParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FootlessParser.framework; path = Carthage/Build/Mac/FootlessParser.framework; sourceTree = "<group>"; };
 		6EE1F90C1C1B886100238520 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		6EEA27E81C1DCC38007A3415 /* HttpBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpBase.swift; sourceTree = "<group>"; };
+		6EEA27EA1C1DDEFF007A3415 /* SwiftCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCheck.framework; path = Carthage/Build/Mac/SwiftCheck.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,7 @@
 		6EE1F8D71C1B83D900238520 = {
 			isa = PBXGroup;
 			children = (
+				6EEA27EA1C1DDEFF007A3415 /* SwiftCheck.framework */,
 				6EE1F90C1C1B886100238520 /* Result.framework */,
 				6EE1F9061C1B875900238520 /* FootlessParser.framework */,
 				6EE1F8E21C1B83D900238520 /* tictactoe-swift */,
